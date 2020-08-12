@@ -1,4 +1,5 @@
 # Bi-encoder includes KGemb-retrieval system, too.
+import pickle
 import pdb, time, math
 from biencoder_parameters import Biencoder_params
 from utils import experiment_logger, EmbLoader, ForOnlyFaiss_KBIndexer, cuda_device_parser, parse_cuidx2encoded_emb_for_debugging
@@ -120,7 +121,10 @@ def main():
         print('Experiment time', math.floor(exp_end_time - exp_start_time), 'sec')
 
         print('Saving model. ')
-        model.save('model.bin')
+        print(type(model))
+        print(dir(model))
+        with open('model.bin','wb') as f:
+            pickle.dump(model, f)
 
 if __name__ == '__main__':
     main()
