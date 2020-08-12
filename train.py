@@ -119,5 +119,8 @@ def main():
         exp_end_time = time.time()
         print('Experiment time', math.floor(exp_end_time - exp_start_time), 'sec')
 
+        print('Saving model. ')
+        model.save('model.bin')
+
 if __name__ == '__main__':
     main()
