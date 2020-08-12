@@ -91,6 +91,8 @@ def main():
         cui2encoded_emb = parse_cuidx2encoded_emb_2_cui2emb(cuidx2encoded_emb=cuidx2encoded_emb, original_cui2idx=current_cui2idx)
         print('=====Encoding all entities in KB FINISHED!=====')
 
+        print('cui2encoded_emb: ', cui2encoded_emb)
+        
         print('\n+++++Indexnizing KB from encoded entites+++++')
         forstoring_encoded_entities_to_faiss = ForOnlyFaiss_KBIndexer(args=opts,
                                                                  input_cui2idx=current_cui2idx,
